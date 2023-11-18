@@ -3,9 +3,7 @@ package com.voucher.Controller;
 import com.voucher.model.Voucher;
 import com.voucher.service.VoucherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/getvoucher")
@@ -18,10 +16,15 @@ public class VoucherController {
  return voucher;
     }
 
-    @GetMapping("voucher/new")
-    public Voucher gernerateNewVoucher(){
-        Voucher v=service.gernerateNewVoucher();
-   return v;
-    }
+//    @GetMapping("voucher/new")
+//    public Voucher gernerateNewVoucher(){
+//        Voucher v=service.gernerateNewVoucher();
+//   return v;
+//    }
+@PostMapping("/voucher")
+    public String save(@RequestBody Voucher voucher){
+        service.saveVoucher(voucher);
+return "save my voucher";
+}
 
 }

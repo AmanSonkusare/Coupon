@@ -24,11 +24,11 @@ public class CouponController {
         return allcoupon;
     }
 
-    @GetMapping("/jsoncoupon")
-    public Coupon getDummyJson(){
-     Coupon coupon =Coupon.builder().id(service.coupon()).validFor(3).type("vouchar").build();
-     return coupon;
-    }
+//    @GetMapping("/jsoncoupon")
+//    public Coupon getDummyJson(){
+//     Coupon coupon =Coupon.builder().id(service.coupon()).validFor(3).type("vouchar").build();
+//     return coupon;
+//    }
 
     @GetMapping("/all-coupon")// url middle portion provide underscore
     public List<String> getCoupon(){
@@ -49,10 +49,17 @@ public class CouponController {
     }
 
     //get coupon data of object oriented
-    @GetMapping("/generate/new")
-    public Coupon generateNewCoupon(){
-        Coupon c =service.generateCoupon();
-        return c;
+//    @GetMapping("/generate/new")
+//    public Coupon generateNewCoupon(){
+//        Coupon c =service.generateCoupon();
+//        return c;
+//    }
+
+    @PostMapping("/coupon/{randomid}")
+    public String randomDataStore(@PathVariable int randomid){
+        service.randomDataStore(randomid);
+        return "random data save sucessfully";
     }
+
 
 }
