@@ -58,7 +58,7 @@ public class CouponController {
     @PostMapping("/coupon/{randomid}")
     public String randomDataStore(@PathVariable int randomid){
         service.randomDataStore(randomid);
-        return "random data save sucessfully";
+        return "random data save  sucessfully";
     }
 
 
