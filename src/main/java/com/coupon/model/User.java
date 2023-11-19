@@ -15,6 +15,6 @@ public class User {
     @Column(name="address")
     private String address;
     @Column(name="phone_number")
-    private long phoneNumber;
+    private long phoneNumber ;
 
 }
