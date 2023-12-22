@@ -9,7 +9,7 @@ import lombok.Data;
 public class User {
     @Id
     @GeneratedValue
-    private int id;
+    private int  id;
     @Column(name="fname")
     private String name;
     @Column(name="address")
